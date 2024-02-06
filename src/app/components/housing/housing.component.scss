@@ -1,0 +1,38 @@
+.logements {
+    padding: 50px 0;
+    text-align: center;
+  
+    h2 {
+      margin-bottom: 30px;
+    }
+  
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .logements-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .logement-item {
+      width: calc(33.33% - 20px);
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+  
+      h3 {
+        margin-top: 0;
+      }
+  
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  

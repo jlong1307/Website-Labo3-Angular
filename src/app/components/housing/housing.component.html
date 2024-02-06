@@ -1,0 +1,14 @@
+<section class="logements">
+    <div class="container">
+      <h2>Liste des logements</h2>
+      <div class="logements-list">
+        <div *ngFor="let housing of housings" class="logement-item">
+          <h3>{{ housing.name }}</h3>
+          <p>Description: {{ housing.description }}</p>
+          <p>Price: {{ housing.price }} $</p>
+          <p>Address: {{ housing.address }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  

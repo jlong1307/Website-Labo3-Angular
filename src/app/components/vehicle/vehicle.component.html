@@ -1,0 +1,14 @@
+<section class="vehicles">
+    <div class="container">
+      <h2>Liste des véhicules</h2>
+      <div class="vehicles-list">
+        <div *ngFor="let vehicle of vehicles" class="vehicle-item">
+          <h3>{{ vehicle.name }}</h3>
+          <p>Description: {{ vehicle.description }}</p>
+          <p>Price: {{ vehicle.price }} $</p>
+          <p>Address: {{ vehicle.address }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
