@@ -1,0 +1,56 @@
+.login {
+    padding: 50px 0;
+    text-align: center;
+  
+    h2 {
+      margin-bottom: 30px;
+    }
+  
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+  
+      .form-group {
+        margin-bottom: 20px;
+  
+        label {
+          display: block;
+          margin-bottom: 5px;
+          text-align: left;
+        }
+  
+        input {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+      }
+  
+      button {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #555;
+        }
+  
+        &[disabled] {
+          background-color: #999;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  
