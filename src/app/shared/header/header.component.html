@@ -4,12 +4,14 @@
       <nav>
         <ul>
           <li><a href="#">Accueil</a></li>
-          <li><a routerLink="/login">Login</a></li>
-          <li><a routerLink="/register">Register</a></li>
           <li><a routerLink="/housing">Housing</a></li>
           <li><a routerLink="/vehicle">Vehicles</a></li>
           <li><a href="#">À propos</a></li>
           <li><a href="#">Contact</a></li>
+          <li *ngIf="!isConnected"><a routerLink="/login">Login</a></li>
+          <li *ngIf="!isConnected"><a routerLink="/register">Register</a></li>
+          <li *ngIf="isConnected"><a routerLink="/detail">My profile</a></li>
+          <li *ngIf="isConnected"><a (click)="logout()">Logout</a></li>
         </ul>
       </nav>
     </div>

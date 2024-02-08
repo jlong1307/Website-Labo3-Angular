@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { JwtPayload, jwtDecode } from "jwt-decode";
-
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +11,7 @@ import { JwtPayload, jwtDecode } from "jwt-decode";
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router : Router){}
 
   onSubmit(loginForm : NgForm)
   {
@@ -21,17 +19,9 @@ export class LoginComponent {
     {
       const {email, password} = loginForm.value;
       this.authService.login(email, password);
+      // this.router.navigate(["home"])
 
     }
-    const token = this.authService.getToken();
-    if(token)
-    {
-      const decoded = jwtDecode(token);
-      if (decoded && decoded.hasOwnProperty('http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'))
-      {
-        const userId = decoded;
-        console.log(Object.values(userId)[0]);
-      }
-    }
+    //METTRE UNE REDIRECTION SI LE LOGIN A MARCHE DANS PROFIL
   }
 }

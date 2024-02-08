@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     VehicleComponent,
     HousingComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

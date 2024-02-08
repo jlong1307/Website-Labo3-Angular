@@ -5,6 +5,7 @@ import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { HousingComponent } from './components/housing/housing.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'housing', component: HousingComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  {path: 'detail', component: DetailComponent}
 
 ];
 
