@@ -19,8 +19,6 @@ export class LoginComponent {
     {
       const {email, password} = loginForm.value;
       this.authService.login(email, password);
-      // this.router.navigate(["home"])
-
     }
     //METTRE UNE REDIRECTION SI LE LOGIN A MARCHE DANS PROFIL
   }

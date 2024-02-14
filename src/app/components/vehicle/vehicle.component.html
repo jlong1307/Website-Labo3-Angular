@@ -1,14 +1,17 @@
 <section class="vehicles">
-    <div class="container">
-      <h2>Liste des véhicules</h2>
-      <div class="vehicles-list">
-        <div *ngFor="let vehicle of vehicles" class="vehicle-item">
-          <h3>{{ vehicle.name }}</h3>
-          <p>Description: {{ vehicle.description }}</p>
-          <p>Price: {{ vehicle.price }} $</p>
-          <p>Address: {{ vehicle.address }}</p>
-        </div>
+  <div class="container">
+    <h2>Liste des véhicules</h2>
+    <div class="vehicles-list">
+      <div *ngFor="let vehicle of vehicles" class="vehicle-item">
+        <h3>{{ vehicle.name }}</h3>
+        <p>Description: {{ vehicle.description }}</p>
+        <p>Price: {{ vehicle.price }} $</p>
+        <p>Address: {{ vehicle.address }}</p>
+        <img [src]="vehicle.img" alt="Vehicle Image" class="vehicle-image">
+        <button class="favorite-button" (click)="toggleFavorite(vehicle)">
+          Add To Favorite
+        </button>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

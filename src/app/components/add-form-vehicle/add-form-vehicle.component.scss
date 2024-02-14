@@ -1,73 +1,42 @@
-.user-details {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 5px;
-
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-
-  .detail-item {
-    display: flex;
-    margin-bottom: 10px;
-
-    .label {
-      width: 120px;
-      font-weight: bold;
-    }
-
-    .value {
-      flex-grow: 1;
-    }
-  }
-}
-
-.housing-details,
-.favorite-details,
-.vehicle-details {
-  margin-top: 20px;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 5px;
-
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-
-  // Ajoutez d'autres styles au besoin pour les détails du logement et du véhicule
-}
-
-.edit-user-form {
-  max-width: 400px;
-  margin: 0 auto;
-
-  form {
-    div {
+.add-form {
+    max-width: 400px;
+    margin: 0 auto;
+  
+    h2 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
-
+    }
+  
+    .form-group {
+      margin-bottom: 1rem;
+  
       label {
         display: block;
         margin-bottom: 0.5rem;
         font-weight: bold;
       }
-
+  
       input[type="text"],
-      input[type="email"] {
+      input[type="number"],
+      textarea,
+      select {
         width: 100%;
         padding: 0.5rem;
         font-size: 1rem;
         border: 1px solid #ccc;
         border-radius: 4px;
         transition: border-color 0.3s;
-
+  
         &:focus {
           outline: none;
           border-color: dodgerblue;
         }
       }
-
+  
+      textarea {
+        min-height: 100px;
+      }
+  
       button[type="submit"] {
         display: block;
         width: 100%;
@@ -79,11 +48,11 @@
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.3s;
-
+  
         &:hover {
           background-color: #007bff;
         }
-
+  
         &:disabled {
           background-color: #ccc;
           cursor: not-allowed;
@@ -91,4 +60,4 @@
       }
     }
   }
-}
+  

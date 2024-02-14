@@ -1,5 +1,5 @@
 .logements {
-    height: 100vh;
+    height: 100%;
     padding: 50px 0;
     text-align: center;
   
@@ -27,6 +27,18 @@
       margin-bottom: 20px;
       text-align: left;
   
+      .favorite-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      
+      .favorite-button:hover {
+        background-color: #0056b3;
+      }
       h3 {
         margin-top: 0;
       }

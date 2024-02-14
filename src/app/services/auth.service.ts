@@ -35,15 +35,16 @@ export class AuthService {
       next : (token : string) => {
         this.setToken(token);
         this.sujetAObserver.next(this.isConnected);
+        this.router.navigate(['/home'])
       },
-      error : (error) => console.log(error),
-      complete : () => console.log("c'est fini")
-
+      error : (error) => console.log(error)
     })
   }
 
+
   logout() {
     localStorage.removeItem("Token")
+    localStorage.removeItem("user");
     this.sujetAObserver.next(this.isConnected)
     this.router.navigate(["home"])
   }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegisterComponent {
 
-  constructor(private authService : AuthService)
+  constructor(private authService : AuthService, private router: Router)
   {
 
   }
@@ -23,6 +23,7 @@ export class RegisterComponent {
       this.authService.register(firstname, lastname, email, password, address, 1).subscribe(
         (response) => {
           console.log(response);
+          this.router.navigate(['home']);
         },
         (error) =>{
           console.error(error);

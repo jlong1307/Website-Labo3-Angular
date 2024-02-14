@@ -1,6 +1,6 @@
-<div class="user-details">
-    <h2>User Details</h2>
-    <div class="detail-item">
+<div *ngIf="!editMode && user" class="user-details">
+    <h2>My profil details</h2>
+    <div  class="detail-item">
       <span class="label">First Name:</span>
       <span class="value">{{ user.firstname }}</span>
     </div>
@@ -16,9 +16,79 @@
       <span class="label">Address:</span>
       <span class="value">{{ user.address }}</span>
     </div>
-    <div class="detail-item">
-      <span class="label">Status:</span>
-      <span class="value">{{ user.status }}</span>
+    <button (click)="editUser()">Update my data</button>
+  </div>
+  
+    <!-- Div pour afficher les informations sur le logement -->
+  <div *ngIf="!editMode" class="housing-details">
+    <h2>My Housing Details</h2>
+    <button (click)="addHousing()">Add</button>
+    <div *ngFor="let housing of housings" class="vehicle-item">
+      <h3>{{ housing.name }}</h3>
+      <p>Description: {{ housing.description }}</p>
+      <p>Price: {{ housing.price }} $</p>
+      <p>Address: {{ housing.address }}</p>
+      <button (click)="deletehousing(housing.id)">Delete</button>
+      <button (click)="editHousing(housing)">Edit</button>
     </div>
+  </div>
+
+  <!-- Div pour afficher les informations sur le véhicule -->
+  <div *ngIf="!editMode" class="vehicle-details">
+    <h2>My Vehicle Details</h2>
+    <button (click)="addVehicle()">Add</button>
+    <div *ngFor="let vehicle of vehicles" class="vehicle-item">
+      <h3>{{ vehicle.name }}</h3>
+      <p>Description: {{ vehicle.description }}</p>
+      <p>Price: {{ vehicle.price }} $</p>
+      <p>Address: {{ vehicle.address }}</p>
+      <button (click)="deletevehicle(vehicle.id)">Delete</button>
+      <button (click)="editVehicle(vehicle)">Edit</button>
+    </div>
+  </div>
+
+  <div *ngIf="!editMode" class="favorite-details">
+    <h2>My Favorite Details</h2>
+    <div *ngFor="let favorite of favorites" class="favorite-item">
+      <h3>{{ favorite.name }}</h3>
+      <p>Description: {{ favorite.description }}</p>
+      <p>Price: {{ favorite.price }} $</p>
+      <img [src]="favorite.img" alt="Favorite Image">
+      <button (click)="deleteFavorite(favorite.id)">Delete</button>
+    </div>
+  </div>
+
+      <!-- Div pour afficher les informations sur le logement -->
+  <div *ngIf="!editMode" class="housing-details">
+    <h2>My Reversation</h2>
+
+  </div>
+
+
+  <div *ngIf="editMode" class="edit-user-form">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" formControlName="firstname">
+      </div>
+      <div>
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" formControlName="lastname">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="text" id="password" formControlName="password">
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" formControlName="address">
+      </div>
+      
+      <button type="submit" [disabled]="!userForm.valid">Update</button>
+    </form>
   </div>
   

@@ -1,0 +1,42 @@
+<div class="add-form">
+    <h2>Add Vehicle</h2>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="vehicle.name" required>
+      </div>
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <select id="type" name="type" [(ngModel)]="vehicle.type" required>
+          <option value="0">FamillyCar</option>
+          <option value="1">SUV</option>
+          <option value="2">MOTO</option>
+          <option value="3">Van</option>
+          <option value="4">Sports car</option>
+          <!-- Ajoutez d'autres options selon vos besoins -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" [(ngModel)]="vehicle.description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" [(ngModel)]="vehicle.address" required>
+      </div>
+      <div class="form-group">
+        <label for="people">People:</label>
+        <input type="number" id="people" name="people" [(ngModel)]="vehicle.people" required>
+      </div>
+      <div class="form-group">
+        <label for="img">Image:</label>
+        <input type="text" id="img" name="img" [(ngModel)]="vehicle.img" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" [(ngModel)]="vehicle.price" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
