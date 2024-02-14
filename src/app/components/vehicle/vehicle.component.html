@@ -8,7 +8,7 @@
         <p>Price: {{ vehicle.price }} $</p>
         <p>Address: {{ vehicle.address }}</p>
         <img [src]="vehicle.img" alt="Vehicle Image" class="vehicle-image">
-        <button class="favorite-button" (click)="toggleFavorite(vehicle)">
+        <button *ngIf="isConnected" class="favorite-button" (click)="toggleFavorite(vehicle)">
           Add To Favorite
         </button>
       </div>

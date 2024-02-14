@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../services/user.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-housing',
@@ -9,10 +10,16 @@ import { UserService } from '../../services/user.service';
 })
 export class HousingComponent {
   housings: any[] = [];
+  isConnected?:boolean;
 
-  constructor(private http: HttpClient, private userService : UserService){}
+  constructor(private http: HttpClient, private userService : UserService,
+              private authService: AuthService){}
   
   ngOnInit():void{
+    this.authService.sujetAObserver.subscribe({
+      next : (data : boolean) => this.isConnected = data
+    })
+    this.authService.sendIsConnectedValue()
     this.getHousings();
   }
 

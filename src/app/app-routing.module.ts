@@ -10,6 +10,7 @@ import { AddFormComponent } from './components/add-form/add-form.component';
 import { AddFormVehicleComponent } from './components/add-form-vehicle/add-form-vehicle.component';
 import { EditHousingComponent } from './components/edit-housing/edit-housing.component';
 import { EditVehicleComponent } from './components/edit-vehicle/edit-vehicle.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'home', component : HomeComponent},

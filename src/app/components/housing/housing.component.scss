@@ -26,7 +26,12 @@
       padding: 20px;
       margin-bottom: 20px;
       text-align: left;
-  
+      
+      .vehicle-image {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
       .favorite-button {
         background-color: #007bff;
         color: #fff;

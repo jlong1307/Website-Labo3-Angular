@@ -21,7 +21,9 @@ import { AddFormVehicleComponent } from './components/add-form-vehicle/add-form-
 import { EditHousingComponent } from './components/edit-housing/edit-housing.component';
 import { EditVehicleComponent } from './components/edit-vehicle/edit-vehicle.component';
 
-
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,14 +38,19 @@ import { EditVehicleComponent } from './components/edit-vehicle/edit-vehicle.com
     AddFormComponent,
     AddFormVehicleComponent,
     EditHousingComponent,
-    EditVehicleComponent
+    EditVehicleComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputTextModule,
+    ButtonModule,
+    RippleModule
+    
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: TieInterceptor, multi:true}],
   bootstrap: [AppComponent]
